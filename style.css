@@ -1,0 +1,165 @@
+/* ===== Reset & Base ===== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  max-width: 100%;
+  height: 100vh;
+}
+
+/* ===== Layout ===== */
+.container {
+  max-width: 100vw;
+  height: 100vh;
+  background-color: hsl(0, 0%, 94%);
+  display: flex;
+  align-items: center;
+}
+
+.card {
+  margin: 0 auto;
+  max-width: 1440px;
+  background-color: #fff;
+  border-radius: 20px 20px 200px 20px;
+  padding: 40px;
+}
+
+/* ===== Inputs ===== */
+.card__inputContainer {
+  display: flex;
+  gap: 40px;
+}
+
+.card__input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: hsl(0, 1%, 44%);
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+.card__input--error {
+  color: hsl(0, 100%, 67%);
+}
+
+.card__input input {
+  margin-left: 10px;
+  width: 150px;
+  padding: 10px;
+  font-size: 25px;
+  font-weight: 700;
+  color: #000;
+  border: 1px solid hsl(0, 0%, 86%);
+  border-radius: 5px;
+}
+
+.input--error {
+  border-color: hsl(0, 100%, 67%);
+}
+
+/* ===== Separator ===== */
+.card--separator {
+  display: flex;
+  position: relative;
+}
+
+.card--separator::before {
+  content: "";
+  height: 1px;
+  width: 100%;
+  border-bottom: 2px solid hsl(0, 0%, 94%);
+}
+
+.card--separator img {
+  background-color: hsl(259, 100%, 65%);
+  border-radius: 50%;
+  width: 60px;
+  padding: 10px;
+  order: 2;
+  z-index: 1;
+}
+
+.card--separator button {
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* ===== Results ===== */
+.card__result {
+  margin-top: 25px;
+  font-size: 80px;
+  font-weight: 800;
+  font-family: "Poppins";
+}
+
+.card__result span {
+  color: hsl(259, 100%, 65%);
+}
+
+/* ===== Desktop ===== */
+@media (min-width: 769px) {
+  .card--separator {
+    width: 650px;
+  }
+
+  .card--separator::before {
+    margin-top: 50px;
+  }
+
+  .card--separator img {
+    position: absolute;
+    right: 0;
+    top: 22px;
+  }
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 768px) {
+  .card {
+    max-width: 768px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 25px;
+  }
+
+  .card__input input {
+    width: 70px;
+    font-size: 16px;
+  }
+
+  .card__inputContainer {
+    font-size: 12px;
+    gap: 20px;
+  }
+
+  .card--separator {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .card--separator::before {
+    position: absolute;
+    width: 100%;
+  }
+
+  button {
+    background: none;
+  }
+
+  .card__result {
+    font-size: 60px;
+    margin-top: 0;
+  }
+}
